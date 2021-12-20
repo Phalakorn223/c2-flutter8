@@ -1,39 +1,48 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
+  runApp(MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return     MaterialApp(
       title: "Flutter App",
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("เทคโนโลยีสารสนเทศ"),
+          title: Text(
+            "เทคโนโลยีสารสนเทศ",
+            style: TextStyle(fontFamily: "Sarabun", fontSize: 25),
+          ),
           centerTitle: true,
-          backgroundColor: Colors.purple[600],
+          backgroundColor: Colors.blue[600],
         ),
-        body: Center(
-          child: Text("นักพัฒนาซอฟต์แวร์"),
-        ),
+        body: Image.asset("assets/images/Goku.jpg"),
         floatingActionButton: FloatingActionButton(
           child: Text("Click"),
           onPressed: () {
-            print("Yoy Click Me");
+            print("You Click me");
           },
-          backgroundColor: Colors.purple[600],
+          backgroundColor: Colors.blue[600],
         ),
         bottomNavigationBar: BottomAppBar(
           child: Container(
             child: Center(
               child: Text(
                 "วิทยาลัยเทคนิคตราด",
-                style: TextStyle(color: Colors.white),
+                style: TextStyle(
+                    color: Colors.white, fontFamily: "Sarabun", fontSize: 30),
               ),
             ),
-            height: 40.0,
+            height: 60,
           ),
-          color: Colors.purple[600],
+          color: Colors.blue[600],
         ),
       ),
-    ),
-  );
+    );
+  }
 }
